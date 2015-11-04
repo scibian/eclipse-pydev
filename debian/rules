@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+export JAVA_HOME:=/usr/lib/jvm/default-java
+
+BUILD_ID:=dist
+
+%:
+	# build.xml confuses dh, so move it aside
+	if [ -f build.xml ]; then \
+		mv build.xml build.xml.unused; \
+	fi
+	dh $@ --with eclipse-helper
+
+override_dh_auto_build-arch:
+	mkdir debian/tmp
+	g++ -shared $$CPPFLAGS $$CXXFLAGS $$LDFLAGS -fPIC -nostartfiles -o attach_linux.so \
+		plugins/org.python.pydev/pysrc/pydevd_attach_to_process/linux/attach_linux.c
+
+override_jh_compilefeatures-arch:
+
+override_jh_compilefeatures-indep:
+	jh_compilefeatures -i --build-opts="-DjavacTarget=1.7 -DjavacSource=1.7 -DbuildId=$(BUILD_ID) -DforceContextQualifier=$(BUILD_ID)"
+
+override_jh_installeclipse-indep:
+	jh_installeclipse
+	find debian/eclipse-pydev-data/usr/share/eclipse/dropins -type f -iregex '.*/LICENSE\(.txt\)?' -delete
+	PYSRC_DIR=debian/eclipse-pydev-data/usr/share/eclipse/dropins/pydev/eclipse/plugins/org.python.pydev_*/pysrc; \
+	rm -r $$PYSRC_DIR/.project \
+	      $$PYSRC_DIR/.pydevproject \
+	      $$PYSRC_DIR/.settings \
+	      $$PYSRC_DIR/.travis.yml \
+	      $$PYSRC_DIR/test*
+
+override_dh_link:
+	JYTHON_BUNDLE=$$(basename $$(find debian/eclipse-pydev-data -type d -name org.python.pydev.jython_*)); \
+	dh_link -peclipse-pydev-data /usr/share/jython/Lib \
+		/usr/share/eclipse/dropins/pydev/eclipse/plugins/$$JYTHON_BUNDLE/Lib
+
+override_dh_auto_clean:
+	dh_auto_clean
+	if [ -f build.xml.unused ]; then \
+		mv build.xml.unused build.xml; \
+	fi
+	rm -f attach_linux.so
+
+get-orig-source:
+	debian/fetch-pydev.sh

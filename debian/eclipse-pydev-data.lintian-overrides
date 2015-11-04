@@ -1,0 +1,2 @@
+# Contained in jython package
+package-contains-broken-symlink usr/share/eclipse/dropins/pydev/eclipse/plugins/org.python.pydev.jython_*.dist/Lib ../../../../../../jython/Lib

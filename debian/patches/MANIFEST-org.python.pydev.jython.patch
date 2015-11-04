@@ -1,0 +1,28 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Thu, 26 Feb 2015 23:00:50 +0100
+Subject: MANIFEST org.python.pydev.jython
+
+We must replace all bundled jars with Debian's shared system libraries.
+
+https://lists.debian.org/debian-java/2015/02/msg00089.html
+
+Forwarded: not-needed
+---
+ plugins/org.python.pydev.jython/META-INF/MANIFEST.MF | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/plugins/org.python.pydev.jython/META-INF/MANIFEST.MF b/plugins/org.python.pydev.jython/META-INF/MANIFEST.MF
+index 04d0d21..fd75059 100644
+--- a/plugins/org.python.pydev.jython/META-INF/MANIFEST.MF
++++ b/plugins/org.python.pydev.jython/META-INF/MANIFEST.MF
+@@ -16,7 +16,9 @@ Require-Bundle: org.eclipse.core.runtime,
+  org.eclipse.ui.console,
+  org.eclipse.jface.text,
+  org.junit;bundle-version="4.0";resolution:=optional,
+- org.python.pydev.shared_ui
++ org.python.pydev.shared_ui,
++ org.python,
++ com.google.guava
+ Bundle-ActivationPolicy: lazy
+ Export-Package: org.python.core,
+  org.python.pydev.jython,

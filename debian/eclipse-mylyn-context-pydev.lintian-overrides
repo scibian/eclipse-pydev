@@ -1,0 +1,2 @@
+# Won't compile without Java 7
+eclipse-mylyn-context-pydev: incompatible-java-bytecode-format

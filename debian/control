@@ -1,0 +1,111 @@
+Source: eclipse-pydev
+Section: devel
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Jakub Adam <jakub.adam@ktknet.cz>
+Build-Depends:
+ antlr3 (>= 3.2-9),
+ debhelper (>= 9),
+ eclipse-mylyn (>= 3.8.2-2),
+ eclipse-pde (>= 3.8),
+ eclipse-rse,
+ javahelper,
+ jython (>= 2.5.3-3),
+ libasm4-java,
+ libjnr-constants-java (>= 0.8.6-6),
+ libguava-java (>= 13.0.1-2),
+ libjffi-java (>= 1.0.2-10),
+ libjnr-ffi-java (>= 1.0.10-3),
+ libjnr-posix-java (>= 3.0.10-3),
+ libjnr-x86asm-java (>= 1.0.2-3),
+ libjpathwatch-java,
+ libxerces2-java,
+ libxmlrpc3-client-java,
+ libxmlrpc3-common-java,
+ libxmlrpc3-server-java,
+ libyaml-snake-java,
+ unzip,
+ zip
+Standards-Version: 3.9.6
+Vcs-Git: git://anonscm.debian.org/pkg-java/eclipse-pydev.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/eclipse-pydev.git
+Homepage: http://pydev.org
+
+Package: eclipse-pydev
+Architecture: any
+Depends:
+ eclipse-pydev-data (>= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends}
+Recommends:
+ gdb
+Description: Python IDE for Eclipse
+ PyDev is a Python IDE for Eclipse, which may be used in Python, Jython and
+ IronPython development.
+ .
+ It comes with many goodies such as:
+ .
+  * Django integration
+  * Code completion
+  * Code completion with auto import
+  * Syntax highlighting
+  * Code analysis
+  * Go to definition
+  * Refactoring
+  * Mark occurrences
+  * Debugger
+  * Remote debugger
+  * Tokens browser
+  * Interactive console
+  * Unittest integration
+  * Code coverage
+
+Package: eclipse-pydev-data
+Architecture: all
+Depends:
+ eclipse-platform (>= 3.8),
+ ${misc:Depends},
+ ${orbit:Depends}
+Recommends:
+ python3
+Suggests:
+ ipython
+Description: Python IDE for Eclipse (data)
+ PyDev is a Python IDE for Eclipse, which may be used in Python, Jython and
+ IronPython development.
+ .
+ It comes with many goodies such as:
+ .
+  * Django integration
+  * Code completion
+  * Code completion with auto import
+  * Syntax highlighting
+  * Code analysis
+  * Go to definition
+  * Refactoring
+  * Mark occurrences
+  * Debugger
+  * Remote debugger
+  * Tokens browser
+  * Interactive console
+  * Unittest integration
+  * Code coverage
+ .
+ This package contains the architecture-independent data files of PyDev.
+
+Package: eclipse-mylyn-context-pydev
+Architecture: all
+Depends:
+ eclipse-mylyn,
+ eclipse-pydev (>= ${binary:Version}),
+ ${misc:Depends},
+ ${orbit:Depends}
+Description: Mylyn context integration for PyDev
+ Mylyn context provides usage monitoring, degree-of-interested modeling and the
+ task-focused user extensions implementation for the Eclipse UI, which re-aligns
+ the user experience around tasks and provides features such as workspace
+ focusing and one-click multitasking.
+ .
+ This package provides Mylyn context integration for Python development
+ with PyDev.

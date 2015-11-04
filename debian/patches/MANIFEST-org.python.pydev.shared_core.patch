@@ -1,0 +1,37 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Thu, 26 Feb 2015 23:59:06 +0100
+Subject: MANIFEST org.python.pydev.shared_core
+
+We must replace all bundled jars with Debian's shared system libraries.
+
+https://lists.debian.org/debian-java/2015/02/msg00089.html
+
+Forwarded: not-needed
+---
+ plugins/org.python.pydev.shared_core/META-INF/MANIFEST.MF | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/plugins/org.python.pydev.shared_core/META-INF/MANIFEST.MF b/plugins/org.python.pydev.shared_core/META-INF/MANIFEST.MF
+index 65e4b45..cc405e0 100644
+--- a/plugins/org.python.pydev.shared_core/META-INF/MANIFEST.MF
++++ b/plugins/org.python.pydev.shared_core/META-INF/MANIFEST.MF
+@@ -3,8 +3,7 @@ Bundle-ManifestVersion: 2
+ Bundle-Name: Shared Core Plug-in
+ Bundle-SymbolicName: org.python.pydev.shared_core;singleton:=true
+ Bundle-Version: 3.9.2.qualifier
+-Bundle-ClassPath: shared_core.jar,
+- libs/snakeyaml-1.11.jar
++Bundle-ClassPath: shared_core.jar
+ Bundle-Activator: org.python.pydev.shared_core.SharedCorePlugin
+ Bundle-Localization: plugin
+ Eclipse-BundleShape: dir
+@@ -14,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
+  org.eclipse.jface,
+  org.eclipse.core.resources,
+  org.eclipse.core.filebuffers,
+- org.eclipse.ui.workbench
++ org.eclipse.ui.workbench,
++ org.yaml.snakeyaml
+ Bundle-ActivationPolicy: lazy
+ Export-Package: org.python.pydev.shared_core,
+  org.python.pydev.shared_core.actions,

@@ -1,0 +1,51 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Thu, 26 Feb 2015 22:59:11 +0100
+Subject: MANIFEST org.python.pydev.shared_interactive_console
+
+We must replace all bundled jars with Debian's shared system libraries.
+
+https://lists.debian.org/debian-java/2015/02/msg00089.html
+
+Forwarded: not-needed
+---
+ .../META-INF/MANIFEST.MF                              | 19 ++++++-------------
+ 1 file changed, 6 insertions(+), 13 deletions(-)
+
+diff --git a/plugins/org.python.pydev.shared_interactive_console/META-INF/MANIFEST.MF b/plugins/org.python.pydev.shared_interactive_console/META-INF/MANIFEST.MF
+index 3ec4a94..e0ff673 100644
+--- a/plugins/org.python.pydev.shared_interactive_console/META-INF/MANIFEST.MF
++++ b/plugins/org.python.pydev.shared_interactive_console/META-INF/MANIFEST.MF
+@@ -3,12 +3,7 @@ Bundle-ManifestVersion: 2
+ Bundle-Name: Interactive Console Plug-in
+ Bundle-SymbolicName: org.python.pydev.shared_interactive_console;singleton:=true
+ Bundle-Version: 3.9.2.qualifier
+-Bundle-ClassPath: interactive_console.jar,
+- commons-logging-1.1.1.jar,
+- ws-commons-util-1.0.2.jar,
+- xmlrpc-client-3.1.3.jar,
+- xmlrpc-common-3.1.3.jar,
+- xmlrpc-server-3.1.3.jar
++Bundle-ClassPath: interactive_console.jar
+ Bundle-Activator: org.python.pydev.shared_interactive_console.InteractiveConsolePlugin
+ Bundle-Localization: plugin
+ Eclipse-BundleShape: dir
+@@ -21,14 +16,12 @@ Require-Bundle: org.eclipse.ui,
+  org.eclipse.ui.workbench.texteditor,
+  org.python.pydev.shared_core,
+  org.eclipse.ui.ide,
+- org.python.pydev.shared_ui
++ org.python.pydev.shared_ui,
++ org.apache.xmlrpc,
++ org.apache.xmlrpc.server,
++ org.apache.xmlrpc.client
+ Bundle-ActivationPolicy: lazy
+-Export-Package: org.apache.commons.logging,org.apache.commons.logging.
+- impl,org.apache.ws.commons.serialize,org.apache.ws.commons.util,org.a
+- pache.xmlrpc,org.apache.xmlrpc.client,org.apache.xmlrpc.client.util,o
+- rg.apache.xmlrpc.common,org.apache.xmlrpc.jaxb,org.apache.xmlrpc.meta
+- data,org.apache.xmlrpc.parser,org.apache.xmlrpc.serializer,org.apache
+- .xmlrpc.server,org.apache.xmlrpc.util,org.apache.xmlrpc.webserver,org
++Export-Package: org
+  .python.pydev.shared_interactive_console,org.python.pydev.shared_inte
+  ractive_console.console,org.python.pydev.shared_interactive_console.c
+  onsole.codegen,org.python.pydev.shared_interactive_console.console.ui

@@ -1,0 +1,134 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Thu, 26 Feb 2015 22:42:12 +0100
+Subject: add orbit dependencies feature.xml
+
+Declare new orbit (build) dependencies here.
+
+Forwarded: not-needed
+---
+ features/org.python.pydev.feature/feature.xml | 114 ++++++++++++++++++++++++++
+ 1 file changed, 114 insertions(+)
+
+diff --git a/features/org.python.pydev.feature/feature.xml b/features/org.python.pydev.feature/feature.xml
+index 94dc59d..37d25f2 100644
+--- a/features/org.python.pydev.feature/feature.xml
++++ b/features/org.python.pydev.feature/feature.xml
+@@ -240,4 +240,118 @@ This Agreement is governed by the laws of the State of New York and the intellec
+          install-size="160"
+          version="3.9.2.qualifier"/>
+ 
++   <plugin
++         id="javax.inject"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="jnr.ffi"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="jnr.x86asm"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.xmlrpc"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.xmlrpc.client"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.xmlrpc.server"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.ws.commons.util"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="name.pachler.nio.file"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.python"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="com.google.guava"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="com.kenai.constantine"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="com.kenai.jffi"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="jnr.posix"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.antlr.runtime"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.ws.commons.util"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.xerces"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.apache.xml.resolver"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
++         id="org.objectweb.asm"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++    <plugin
++         id="org.yaml.snakeyaml"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
+ </feature>

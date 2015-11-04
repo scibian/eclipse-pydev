@@ -1,0 +1,12 @@
+remove-windows-specific-code.patch
+remove-winp-usage.patch
+fix-proc-read-linux-3.17.patch
+fix-attach-so-path.patch
+add-orbit-dependencies-feature.xml.patch
+MANIFEST-org.python.pydev.shared_interactive_console.patch
+MANIFEST-org.python.pydev.jython.patch
+MANIFEST-org.python.pydev.core.patch
+MANIFEST-org.python.pydev.shared_core.patch
+WorkspaceStub.patch
+no-e4.patch
+MANIFEST-org.python.pydev.debug.patch

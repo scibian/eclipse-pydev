@@ -1,0 +1,27 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Thu, 26 Feb 2015 23:05:06 +0100
+Subject: MANIFEST org.python.pydev.core
+
+We must replace all bundled jars with Debian's shared system libraries.
+
+https://lists.debian.org/debian-java/2015/02/msg00089.html
+
+Forwarded: not-needed
+---
+ plugins/org.python.pydev.core/META-INF/MANIFEST.MF | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/plugins/org.python.pydev.core/META-INF/MANIFEST.MF b/plugins/org.python.pydev.core/META-INF/MANIFEST.MF
+index a6c73b0..3a83005 100644
+--- a/plugins/org.python.pydev.core/META-INF/MANIFEST.MF
++++ b/plugins/org.python.pydev.core/META-INF/MANIFEST.MF
+@@ -18,7 +18,8 @@ Require-Bundle: org.junit;bundle-version="4.0.0";resolution:=optional,
+  org.eclipse.ui.console,
+  org.eclipse.core.variables,
+  org.python.pydev.shared_core;visibility:=reexport,
+- org.python.pydev.shared_ui
++ org.python.pydev.shared_ui,
++ name.pachler.nio.file
+ Bundle-ActivationPolicy: lazy
+ Export-Package: org.python.pydev.core,org.python.pydev.core.cache,org.
+  python.pydev.core.concurrency,org.python.pydev.core.docutils,org.pyth

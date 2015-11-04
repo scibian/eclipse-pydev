@@ -1,0 +1,20 @@
+antlr3-runtime
+asm4-all
+atinject-jsr330-api
+jnr-constants
+guava
+jffi
+jnr-ffi
+jnr-posix
+jnr-x86asm
+jpathwatch
+jython
+ws-commons-util
+xmlrpc-client
+xmlrpc-common
+xmlrpc-server
+snakeyaml
+
+# not build dependencies, but required by Jython console
+xercesImpl
+xml-resolver

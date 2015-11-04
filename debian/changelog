@@ -1,0 +1,115 @@
+eclipse-pydev (3.9.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Vcs-Browser: Use https.
+  * Switch from libasm3-java to libasm4-java. (Closes: #800848)
+
+ -- Markus Koschany <apo@debian.org>  Wed, 04 Nov 2015 23:12:18 +0100
+
+eclipse-pydev (3.9.2-3) unstable; urgency=medium
+
+  [ Miguel Landaeta ]
+  * Team upload (Closes: #790409).
+  * Replace dependency on libconstantine-java with libjnr-constants-java.
+
+  [ Jakub Adam ]
+  * Replace dependency on libjaffl-java with libjnr-ffi-java
+    (Closes: #789510).
+  * Bump required libjnr-posix-java to >= 3.0.10-3.
+  * Refresh add-orbit-dependencies-feature.xml.patch.
+
+ -- Jakub Adam <jakub.adam@ktknet.cz>  Thu, 25 Jun 2015 11:56:35 +0200
+
+eclipse-pydev (3.9.2-2) unstable; urgency=medium
+
+  * Fix build of only arch-specific packages.
+
+ -- Jakub Adam <jakub.adam@ktknet.cz>  Tue, 17 Mar 2015 19:41:09 +0100
+
+eclipse-pydev (3.9.2-1) unstable; urgency=medium
+
+  * Reintroduction of eclipse-pydev by Jakub Adam and
+    Markus Koschany (Closes: #636698)
+
+ -- Jakub Adam <jakub.adam@ktknet.cz>  Thu, 26 Feb 2015 19:27:06 +0100
+
+eclipse-pydev (1.2.5-4) unstable; urgency=low
+
+  * Expilictely use gcj-4.3 instead of gcj-4.1.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 11 May 2008 20:40:07 +0200
+
+eclipse-pydev (1.2.5-3) unstable; urgency=low
+
+  * debian/control: Remove duplicate attributes. Closes: #477375.
+  * Don't build on alpha, arm, hppa and hurd-i386. Closes: #477856.
+  * Build using recent gcj. Closes: #432539.
+  * Depend on eclipse instead of eclipse-sdk. Closes: #433409.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 10 May 2008 10:38:52 +0200
+
+eclipse-pydev (1.2.5-2) unstable; urgency=low
+
+  * Upload Ubuntu package to Debian. Closes: #316731.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 13 Jan 2007 22:27:43 +0100
+
+eclipse-pydev (1.2.5-1ubuntu1) feisty; urgency=low
+
+  * New upstream release
+  * Removed Jython code from the sources
+  * Patched to work when configured to use system Jython
+
+ -- Vladimír Lapáček <vladimir.lapacek@gmail.com>  Sat, 06 Nov 2006 22:00:01 +0200
+
+eclipse-pydev (1.2.0-1ubuntu3) edgy; urgency=low
+
+  * Changed the installation directory to /usr/lib/eclipse
+  * Use new eclipse 3.2.1 for build
+
+ -- Vladimír Lapáček <vladimir.lapacek@gmail.com>  Wed, 18 Oct 2006 23:29:37 +0200
+
+eclipse-pydev (1.2.0-1ubuntu2) edgy; urgency=low
+
+  * rebuild for libgcj7 -> libgcj7-0
+
+ -- Michael Bienia <michael@vorlon.ping.de>  Fri, 25 Aug 2006 18:05:43 +0200
+
+eclipse-pydev (1.2.0-1ubuntu1) edgy; urgency=low
+
+  * New upstram version
+  * Used backport patches from linux-distros-dev@eclipse.org
+  * Removed debian/pydev.links.disabled
+  * Removed ${python:Depends} from dependency list
+
+ -- Vladimír Lapáček <vladimir.lapacek@gmail.com>  Sat, 24 Jun 2006 21:26:11 +0100
+
+eclipse-pydev (1.0.3-1ubuntu1) dapper; urgency=low
+
+  * New upstream version
+
+ -- Vladimír Lapáček <vladimir.lapacek@gmail.com>  Fri, 31 Mar 2006 20:32:14 +0100
+
+eclipse-pydev (0.9.8.3-1ubuntu2) dapper; urgency=low
+
+  * debian/control: s/Build-Depends-Indep/Build-Depends/.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 23 Mar 2006 15:28:46 +0100
+
+eclipse-pydev (0.9.8.3-1ubuntu1) dapper; urgency=low
+
+  * Build using java-gcj-compat-dev.
+  * debian/rules: Updates for eclipse-3.1.2.
+  * debian/control: Require eclipse-3.1.2.
+  * eclipse-pydev-gcj: New native package.
+  * Remove retroweaver jar's from the source package.
+
+ -- Matthias Klose <doko@ubuntu.com>  Wed, 22 Mar 2006 23:17:02 +0100
+
+eclipse-pydev (0.9.8.3-1) dapper; urgency=low
+
+  * Initial release.
+  * Backport to use only Java 1.4 compatible code. The free runtimes don't
+    support 1.5 yet very well.
+
+ -- Vladimír Lapáček <vladimir.lapacek@gmail.com>  Sun, 11 Dec 2005 20:32:14 -0700

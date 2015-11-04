@@ -1,0 +1,43 @@
+From: Jakub Adam <jakub.adam@ktknet.cz>
+Date: Sun, 16 Nov 2014 22:08:45 +0100
+Subject: fix-proc-read-linux-3.17
+
+Implementation of procfs changed in Linux 3.17 so that lseek SEEK_END called on
+files in /proc now fails with EINVAL error, which consequently leads to
+IOException being thrown from Java native method FileInputStream.available()
+internally using lseek.
+
+Since PyDev uses available() merely to optimize memory allocation of a string
+buffer, we can just ignore the exception. In that case the only drawback will be
+a possible need to increase the buffer size by re-allocating it during reading
+of the contents of the file.
+
+This fixes an error whenever the user tried to attach a debugger to a running
+Python process.
+---
+ .../src/org/python/pydev/shared_core/io/FileUtils.java       | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/plugins/org.python.pydev.shared_core/src/org/python/pydev/shared_core/io/FileUtils.java b/plugins/org.python.pydev.shared_core/src/org/python/pydev/shared_core/io/FileUtils.java
+index 7c395a1..93abc40 100644
+--- a/plugins/org.python.pydev.shared_core/src/org/python/pydev/shared_core/io/FileUtils.java
++++ b/plugins/org.python.pydev.shared_core/src/org/python/pydev/shared_core/io/FileUtils.java
+@@ -340,11 +340,13 @@ public class FileUtils {
+             if (buffer == null) {
+                 int DEFAULT_FILE_SIZE = 8 * BUFFER_SIZE;
+ 
+-                //discover how to actually read the passed input stream.
+-                int available = contentStream.available();
+-                if (DEFAULT_FILE_SIZE < available) {
+-                    DEFAULT_FILE_SIZE = available;
+-                }
++                try {
++		    //discover how to actually read the passed input stream.
++                    int available = contentStream.available();
++                    if (DEFAULT_FILE_SIZE < available) {
++                        DEFAULT_FILE_SIZE = available;
++                    }
++                } catch (IOException e) {}
+                 buffer = new FastStringBuffer(DEFAULT_FILE_SIZE);
+             }
+ 
