@@ -1,3 +1,11 @@
+eclipse-pydev (3.9.2-4scibian1) jessie; urgency=low
+
+  * Replace jnr-ffi & jnr-x86asmi build dependencies with jaffl
+  * Replace jnr-constants dependency with libconstantine-java
+  * Replace jnr-posix 3.0 dependency with jnr-posix 1.1
+
+ -- Scibian Packaging Team <packaging@scibian.org>  Wed, 07 Sep 2016 16:41:47 +0200
+
 eclipse-pydev (3.9.2-4) unstable; urgency=medium
 
   * Team upload.
