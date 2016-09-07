@@ -10,3 +10,4 @@ MANIFEST-org.python.pydev.shared_core.patch
 WorkspaceStub.patch
 no-e4.patch
 MANIFEST-org.python.pydev.debug.patch
+scibian-orbit-dependencies-feature.xml.patch

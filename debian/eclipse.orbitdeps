@@ -1,12 +1,11 @@
 antlr3-runtime
 asm4-all
 atinject-jsr330-api
-jnr-constants
+constantine
 guava
+jaffl
 jffi
-jnr-ffi
 jnr-posix
-jnr-x86asm
 jpathwatch
 jython
 ws-commons-util

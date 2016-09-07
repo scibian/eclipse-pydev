@@ -1,0 +1,45 @@
+Description: Build dependencies replacement
+Author: Scibian Packaging Team <packaging@scibian.org>
+
+--- a/features/org.python.pydev.feature/feature.xml
++++ b/features/org.python.pydev.feature/feature.xml
+@@ -247,18 +247,6 @@
+          version="0.0.0"
+          unpack="false"/>
+    <plugin
+-         id="jnr.ffi"
+-         download-size="0"
+-         install-size="0"
+-         version="0.0.0"
+-         unpack="false"/>
+-   <plugin
+-         id="jnr.x86asm"
+-         download-size="0"
+-         install-size="0"
+-         version="0.0.0"
+-         unpack="false"/>
+-   <plugin
+          id="org.apache.xmlrpc"
+          download-size="0"
+          install-size="0"
+@@ -307,13 +295,19 @@
+          version="0.0.0"
+          unpack="false"/>
+    <plugin
++         id="com.kenai.jaffl"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         unpack="false"/>
++   <plugin
+          id="com.kenai.jffi"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+          unpack="false"/>
+    <plugin
+-         id="jnr.posix"
++         id="org.jruby.ext.posix"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
